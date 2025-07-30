@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+!.godot/user_data/
+
+# Godot 3 specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# General ignores
+*.o
+*.lo
+*.so
+*.a
+*.obj
+*.pyc
+*.pyo
+*.pyd
