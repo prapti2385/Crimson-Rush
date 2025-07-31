@@ -2,34 +2,34 @@
 
 [ext_resource type="PackedScene" uid="uid://ckp5vmpmi6dtt" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://bvbqavsketp6f" path="res://pine_tree.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://dxq7sqn65yu5b" path="res://mob.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://doh55gycr006w" path="res://mob.tscn" id="3_feb5d"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(8, -9)
+
+[node name="mob3" parent="." instance=ExtResource("3_feb5d")]
+position = Vector2(-1141, 311)
+
+[node name="mob4" parent="." instance=ExtResource("3_feb5d")]
+position = Vector2(-1210, -397)
+
+[node name="mob" parent="." instance=ExtResource("3_feb5d")]
+
+[node name="mob2" parent="." instance=ExtResource("3_feb5d")]
+position = Vector2(511, -362)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -128
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -1400.0
-offset_top = -598.0
-offset_right = 1483.0
-offset_bottom = 787.0
+offset_left = -1392.0
+offset_top = -619.0
+offset_right = 1491.0
+offset_bottom = 766.0
 
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
 position = Vector2(0, 8)
-
-[node name="Mob" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(-936, -213)
-
-[node name="Mob2" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(465, -84)
-
-[node name="Mob3" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(-182, 188)
-
-[node name="Mob4" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(-869, 615)
 
 [node name="PineTree" parent="." instance=ExtResource("2_e2o6t")]
 position = Vector2(-639, 316)
