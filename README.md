@@ -1,4 +1,4 @@
-# Happy Boo's Turret Survival 🌲
+# Crimson Rush 🌲
 
 [![Godot Version](https://img.shields.io/badge/Godot-4.x-blue?logo=godotengine)](https://godotengine.org)
 [![Language](https://img.shields.io/badge/Language-GDScript-yellow?logo=godotengine&logoColor=white)](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/index.html)
