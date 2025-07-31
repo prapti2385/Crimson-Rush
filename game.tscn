@@ -1,24 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2ey5l0ndsnt0"]
+[gd_scene load_steps=6 format=3 uid="uid://b2ey5l0ndsnt0"]
 
+[ext_resource type="Script" uid="uid://bpo6bgb1ya00h" path="res://game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://ckp5vmpmi6dtt" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://bvbqavsketp6f" path="res://pine_tree.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://doh55gycr006w" path="res://mob.tscn" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://dhmhmrth6rdce" path="res://smoke_explosion/smoke_explosion.tscn" id="4_fc0e3"]
+
+[sub_resource type="Curve2D" id="Curve2D_ryrav"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1473, -975, 0, 0, 0, 0, 1593, -1062, 0, 0, 0, 0, 1647, 900, 0, 0, 0, 0, 1495, 98, 0, 0, 0, 0, -1473, -975, 0, 0, 0, 0, -1506, 900)
+}
+point_count = 6
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(8, -9)
-
-[node name="mob3" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(-1141, 311)
-
-[node name="mob4" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(-1210, -397)
-
-[node name="mob" parent="." instance=ExtResource("3_feb5d")]
-
-[node name="mob2" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(511, -362)
+script = ExtResource("1_7jktm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -128
@@ -31,6 +27,15 @@ offset_bottom = 766.0
 
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
 position = Vector2(0, 8)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(0, -8)
+curve = SubResource("Curve2D_ryrav")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-1473, -975)
+rotation = -0.0283681
 
 [node name="PineTree" parent="." instance=ExtResource("2_e2o6t")]
 position = Vector2(-639, 316)
@@ -54,3 +59,8 @@ position = Vector2(382, -367)
 position = Vector2(-1139, -423)
 
 [node name="SmokeExplosion" parent="." instance=ExtResource("4_fc0e3")]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
