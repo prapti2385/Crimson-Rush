@@ -18,7 +18,7 @@ position = Vector2(1, 25)
 position = Vector2(2, 19)
 shape = SubResource("CircleShape2D_hqtel")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Gun" parent="." instance=ExtResource("3_i3pqv")]
-position = Vector2(0, -34)
+position = Vector2(0, -21)
+
+[node name="Camera2D" type="Camera2D" parent="."]
