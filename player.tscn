@@ -59,3 +59,5 @@ offset_bottom = -91.0
 theme_override_styles/background = SubResource("StyleBoxFlat_i3pqv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hqtel")
 value = 100.0
+
+[connection signal="health_depleted" from="." to="." method="_on_health_depleted"]

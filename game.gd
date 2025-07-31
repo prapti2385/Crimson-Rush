@@ -11,3 +11,9 @@ func spawn_mob():
 
 func _on_timer_timeout() -> void:
 	spawn_mob()
+
+@onready var game_over: CanvasLayer = %GameOver
+
+func _on_player_health_depleted() -> void:
+	game_over.visible = true
+	get_tree().paused = true
