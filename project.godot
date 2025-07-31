@@ -81,7 +81,6 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/initial_position_type=0
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -131,3 +130,4 @@ shoot={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

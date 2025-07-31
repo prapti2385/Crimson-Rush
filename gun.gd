@@ -1,4 +1,7 @@
 extends Area2D
+@onready var shooting_point: Marker2D = %ShootingPoint
+
+
 func _physics_process(delta: float) -> void:
 	var enemies_in_range = get_overlapping_bodies() #returns an array
 	if enemies_in_range.size() > 0:
@@ -7,4 +10,10 @@ func _physics_process(delta: float) -> void:
 
 
 func shoot():
+	const BULLET = preload("res://bullet.tscn")
+	var new_bullet = BULLET.instantiate()
+	new_bullet.global_position = shooting_point.global_position
+	shooting_point.add_child(new_bullet)
 	
+func _on_timer_timeout() -> void:
+	shoot()

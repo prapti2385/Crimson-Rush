@@ -4,8 +4,9 @@ extends CharacterBody2D
 
 
 func _physics_process(delta: float) -> void:
+	const SPEED = 600
 	var direction = Input.get_vector("move_left","move_right","move_up","move_down");
-	velocity = direction * 600
+	velocity = direction * SPEED
 	move_and_slide()
 	
 	if velocity.length() > 0.0:
